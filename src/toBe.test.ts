@@ -22,3 +22,17 @@ test("sum은 두 숫자를 더해줍니다.", () => {
 // config 설정 -> npx ts-jest config:init
 // 위에 명령어로 jest.config.js 생성해서 설정 추가해도되고
 // package.json에 "jest": {} 추가해도됨 (config 파일 별도 분리 안하고 싶을때)
+// + test 파일도 typescript 문법에 어긋나면 안됨 -> typescript에서 에러 내버리면 테스트 실행 안됨
+
+test("sum은 두 숫자를 더해줍니다.", () => {
+  // expect 여러개 사용 가능한데 전부다 true여야 테스트 통과
+  expect(sum(1, 2)).toBe(3);
+  expect(sum(1, 2)).toBe(3);
+  expect(sum(1, 2)).toBe(3);
+});
+
+test("sum은 두 숫자를 더해줍니다.", () => {
+  expect(sum(1, 2)).not.toBe(2);
+});
+
+// vscode 내부에서 자체적으로 테스트 실행 해주고 싶으면 확장프로그램 설치하고 -> settings.json 추가
