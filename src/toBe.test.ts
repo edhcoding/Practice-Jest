@@ -17,3 +17,8 @@ test("sum은 두 숫자를 더해줍니다.", () => {
 
 // esm 트랜스파일러 없이 테스트 가능하게 하는 방법
 // npx cross-env NODE_OPTIONS="$NODE_OPTIONS --experimental-vm-modules" jest
+
+// typescript 사용하려면 -> ts-jest @types/jest
+// config 설정 -> npx ts-jest config:init
+// 위에 명령어로 jest.config.js 생성해서 설정 추가해도되고
+// package.json에 "jest": {} 추가해도됨 (config 파일 별도 분리 안하고 싶을때)
