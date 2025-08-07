@@ -3,3 +3,9 @@ export function timer(callback) {
     callback("success");
   }, 3000);
 }
+
+export function timer2(callback) {
+  setTimeout(() => {
+    callback("success");
+  }, 10_000);
+}
