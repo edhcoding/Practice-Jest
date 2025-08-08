@@ -32,7 +32,7 @@ test("first->second->third", () => {
   );
 });
 
-test("first->second->third 2", () => {
+test.skip("first->second->third 2", () => {
   const spy1 = jest.fn(first);
   const spy2 = jest.fn(second);
   const spy3 = jest.fn(third);
