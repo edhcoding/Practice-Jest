@@ -8,4 +8,6 @@ export default {
   transform: {
     ...tsJestTransformCfg,
   },
+  testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.[jt]sx?$",
+  setupFilesAfterEnv: ["./testSetup.ts"],
 };
