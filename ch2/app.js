@@ -16,7 +16,10 @@ const { sequelize } = require('./models');
 const passportConfig = require('./passport');
 
 const app = express();
-passportConfig(); // 패스포트 설정
+
+// 앱 시작시 passportConfig 호출로 인증 시스템 초기화
+passportConfig(); // 패스포트 설정 
+
 app.set('port', process.env.PORT || 8001);
 app.set('view engine', 'html');
 nunjucks.configure('views', {
@@ -46,6 +49,8 @@ app.use(session({
     secure: false,
   },
 }));
+
+// passport 초기화, 세션 미들웨어 추가
 app.use(passport.initialize());
 app.use(passport.session());
 
